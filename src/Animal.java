@@ -70,8 +70,22 @@ public class Animal {
         System.out.println(name + "видала звук.");
     }
 
-    public void feeding(){}
+    private void feeding(Food food) {
+        if (kind == kindAnimal.HERBIVORE && (food.getKind() == kindFood.MEAT)) {
+            System.out.println(getName() + " не їстиме м'ясо, оскільки вона травоїдна.");
+        }
+        else if (kind == kindAnimal.PREDATOR && (food.getKind() == kindFood.VEGETABLES || food.getKind() == kindFood.FRUITS)) {
+            System.out.println(getName() + " не їстиме рослини чи фрукти, оскільки вона хижак.");
+        } else {
+            setHungerLevel(getHungerLevel() + food.getSatiety());
+            System.out.println(getName() + " з'їла " + food.getName() + " і отримала +" + food.getSatiety() + " ситості.");
+            System.out.println("Зараз ситість тварини: " + getHungerLevel());
 
+        }
+    }
+    public void feedByFeeder(Food food) {
+        feeding(food);
+    }
     public void moves(){
         System.out.println("Тварина рухається.");
     }
