@@ -13,7 +13,7 @@ public class ZooEmpoyee {
         this.typeActivity = typeActivity;
     }
 
-    public void sayAboutAnimal(Animal animal){
+    public void sayAboutAnimal(Animal animal) {
         HashMap<String, Object> info = animal.returnInfo();
 
         String name = (String) info.get("Назва");
@@ -47,5 +47,5 @@ public class ZooEmpoyee {
             System.out.println("Обережно тварина дуже голодна, час годувати!");
         }
 
-
+    }
 }
