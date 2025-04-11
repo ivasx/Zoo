@@ -1,3 +1,5 @@
+import java.util.HashMap;
+
 public class Animal {
 
     protected String name;
@@ -74,13 +76,16 @@ public class Animal {
         System.out.println("Тварина рухається.");
     }
 
-    public String returnInfo(){
-        return "Назва           : " + name + "/n" +
-                "Вид             : " + kind + "/n" +
-                "Вік             : " + age + "/n" +
-                "Вага            : " + weight + "/n" +
-                "Голод           : " + weight + "/n" +
-                "Місцезнаходження: " + weight + "/n";
+    public HashMap<String, Object> returnInfo() {
+        HashMap<String, Object> info = new HashMap<>();
+        info.put("Назва", name);
+        info.put("Вид", kind);
+        info.put("Вік", age);
+        info.put("Вага", weight);
+        info.put("Рівень голоду", hungerLevel);
+        info.put("Місцезнаходження", location);
+        return info;
     }
+
 
 }
